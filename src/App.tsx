@@ -1,5 +1,6 @@
 import { Box, Flex, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
+import ProductGrid from "./components/ProductGrid";
 
 
 function App() {
@@ -24,12 +25,7 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <Box paddingLeft={2}>
-          <Flex marginBottom={5}>
-            <Box marginRight={5}>
-            </Box>
-          </Flex>
-        </Box>
+        <ProductGrid />
       </GridItem>
     </Grid>
   );

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
 
-interface Product{
+export interface Product{
     id:number;
     title:string;
+    images:string[];
 }
 interface FetchProductsResponse{
     count:number;

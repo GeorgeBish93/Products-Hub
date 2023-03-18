@@ -1,25 +1,24 @@
-import React from 'react'
-import { Card, CardBody, Heading, HStack, Image, Text } from '@chakra-ui/react'
-import { Product } from '../hooks/useProducts'
-import ProductPrice from './ProductPrice'
-
+import React from "react";
+import { Card, CardBody, Heading, HStack, Image, Text } from "@chakra-ui/react";
+import { Product } from "../hooks/useProducts";
+import ProductPrice from "./ProductPrice";
 
 interface Props {
-  product: Product
+  product: Product;
 }
 
 const ProductCard = ({ product }: Props) => {
-    return (
-        <Card width='250px' borderRadius={10} overflow='hidden'>
-          <Image src={product.images[2]} />
-          <CardBody>
-          <Heading fontSize='2xl'>{product.title}</Heading>
-            <HStack justifyContent='space-between' marginBottom={3}>
-                <ProductPrice score={product.price}/>
-            </HStack>
-          </CardBody>
-        </Card>
-      )
-}
+  return (
+    <Card>
+      <Image src={product.images[2]} />
+      <CardBody>
+        <Heading fontSize="2xl">{product.title}</Heading>
+        <HStack justifyContent="space-between" marginBottom={3}>
+          <ProductPrice score={product.price} />
+        </HStack>
+      </CardBody>
+    </Card>
+  );
+};
 
-export default ProductCard
+export default ProductCard;

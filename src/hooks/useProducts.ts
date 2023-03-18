@@ -15,6 +15,8 @@ interface FetchProductsResponse{
 const useProducts = () =>{
     const [products,setProducts] = useState<Product[]>([]);
     const [error,setError] = useState('');
+    const [isLoading, setLoading] = useState(false);
+
   
     useEffect(()=>{
         // apiClient.get<FetchProductsResponse>('/products')
@@ -22,19 +24,24 @@ const useProducts = () =>{
         //     .catch(err => setError(err.message))
         let componentMounted = true;
         const getProdcuts = async () => {
+            setLoading(true);
+
             const response = await fetch('https://api.escuelajs.co/api/v1/products');
             if (componentMounted) {
                 const data = await response.json();
                 setProducts(data);
+                setLoading(false);
             }
             return () => {
                 componentMounted = false;
+                setLoading(false);
+
             }
         }
         getProdcuts();
 
     },[]);
-    return {products,error};
+    return {products,error,isLoading};
 
 }
 export default useProducts;

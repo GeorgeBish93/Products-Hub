@@ -1,9 +1,11 @@
 import useProducts from "../hooks/useProducts";
 import { SimpleGrid, Text } from "@chakra-ui/react";
 import ProductCard from "./ProductCard";
+import CardSkeleton from "./CardSkeleton";
 
 const ProductGrid = () => {
-  const { products, error } = useProducts();
+  const { products, error ,isLoading} = useProducts();
+  const skeletons = [1, 2, 3, 4, 5, 6];
 
   return (
     <>
@@ -12,9 +14,15 @@ const ProductGrid = () => {
       padding="10px"
       spacing={6}
     >
-   {products.map((product) => (
-    <ProductCard key={product.id} product={product} />
-      ))}
+      {isLoading &&
+        skeletons.map(skeleton => 
+            <CardSkeleton key={skeleton}/>
+        )}
+
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+          ))}
+
     </SimpleGrid>
     <ul>
       

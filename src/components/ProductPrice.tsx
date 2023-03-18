@@ -8,7 +8,7 @@ const ProductPrice = ({ score }: Props) => {
   let color = score > 500 ? 'red' : score > 100 ? 'yellow' : 'green';
 
   return (
-    <Badge colorScheme={color} fontSize='14px' paddingX={2} borderRadius='4px'>{score}</Badge>
+    <Badge colorScheme={color} fontSize='14px' paddingX={2} borderRadius='4px'>${score}</Badge>
   )
 }
 

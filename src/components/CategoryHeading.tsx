@@ -6,8 +6,8 @@ interface Props {
 }
 
 const CategoryHeading = ({ productQuery }: Props) => {
-  const heading = ` ${
-    productQuery.category?.name || "All Categories"
+  const heading = `${productQuery.sortOrder || ""} ${
+    productQuery.category?.name || ""
   } Products`;
 
   return (

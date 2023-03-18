@@ -5,7 +5,7 @@ import CardSkeleton from "./CardSkeleton";
 import CardContainer from "./CardContainer";
 
 const ProductGrid = () => {
-  const { products, error, isLoading } = useProducts();
+  const { data, error, isLoading } = useProducts();
   const skeletons = [1, 2, 3, 4, 5, 6];
 
   return (
@@ -22,7 +22,7 @@ const ProductGrid = () => {
             </CardContainer>
           ))}
 
-        {products.map((product) => (
+        {data.map((product) => (
           <CardContainer>
             <ProductCard key={product.id} product={product} />
           </CardContainer>

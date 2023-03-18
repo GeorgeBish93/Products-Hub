@@ -1,5 +1,6 @@
 import { Box, Flex, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 import { useState } from "react";
+import CategoryHeading from "./components/CategoryHeading";
 import CategoryList from "./components/CategoryList";
 import NavBar from "./components/NavBar";
 import ProductGrid from "./components/ProductGrid";
@@ -43,6 +44,7 @@ function App() {
       </Show>
       <GridItem area="main">
         <Box paddingLeft={2}>
+          <CategoryHeading productQuery={productQuery} />
           <Flex marginBottom={5}>
             <Box marginRight={5}>
               {" "}

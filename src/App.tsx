@@ -3,11 +3,18 @@ import { useState } from "react";
 import CategoryList from "./components/CategoryList";
 import NavBar from "./components/NavBar";
 import ProductGrid from "./components/ProductGrid";
+import SortSelector from "./components/SortSelector";
 import { Category } from "./hooks/useCategory";
 
+export interface ProductQuery {
+  category: Category | null;
+  sortOrder: string;
+  searchText: string;
+}
+
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState<Category | null>(
-    null
+  const [productQuery, setProductQuery] = useState<ProductQuery>(
+    {} as ProductQuery
   );
 
   return (
@@ -27,13 +34,23 @@ function App() {
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
           <CategoryList
-            selectedCategory={selectedCategory}
-            onSelectCategory={(category) => setSelectedCategory(category)}
+            selectedCategory={productQuery.category}
+            onSelectCategory={(category) =>
+              setProductQuery({ ...productQuery, category })
+            }
           />
         </GridItem>
       </Show>
       <GridItem area="main">
-        <ProductGrid selectedCategory={selectedCategory} />
+        <Box paddingLeft={2}>
+          <Flex marginBottom={5}>
+            <Box marginRight={5}>
+              {" "}
+              <SortSelector sortOrder={productQuery.sortOrder} />
+            </Box>
+          </Flex>
+        </Box>
+        <ProductGrid productQuery={productQuery} />
       </GridItem>
     </Grid>
   );

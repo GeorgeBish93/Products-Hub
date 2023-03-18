@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ProductQuery } from "../App";
 import { Category } from "./useCategory";
 import useData from "./useData";
 
@@ -14,6 +15,6 @@ export interface Product {
 }
 
 //here insert the endount code
-const useProducts = (selectedCategory: Category | null) =>
+const useProducts = (productQuery: ProductQuery) =>
   useData<Product>("/products");
 export default useProducts;

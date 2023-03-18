@@ -4,13 +4,14 @@ import ProductCard from "./ProductCard";
 import CardSkeleton from "./CardSkeleton";
 import CardContainer from "./CardContainer";
 import { Category } from "../hooks/useCategory";
+import { ProductQuery } from "../App";
 
 interface Props {
-  selectedCategory: Category | null;
+  productQuery: ProductQuery;
 }
 
-const ProductGrid = ({ selectedCategory }: Props) => {
-  const { data, error, isLoading } = useProducts(selectedCategory);
+const ProductGrid = ({ productQuery }: Props) => {
+  const { data, error, isLoading } = useProducts(productQuery);
   const skeletons = [1, 2, 3, 4, 5, 6];
 
   return (

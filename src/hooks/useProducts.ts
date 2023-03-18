@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { ProductQuery } from "../App";
-import { Category } from "./useCategory";
 import useData from "./useData";
 
 export interface Product {

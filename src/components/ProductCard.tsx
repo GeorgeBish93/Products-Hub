@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardBody, Heading, HStack, Image, Text } from "@chakra-ui/react";
 import { Product } from "../hooks/useProducts";
 import ProductPrice from "./ProductPrice";

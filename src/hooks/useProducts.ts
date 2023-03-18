@@ -14,5 +14,13 @@ export interface Product {
 
 //here insert the endount code
 const useProducts = (productQuery: ProductQuery) =>
-  useData<Product>("/products");
+  useData<Product>(
+    "/products",
+    {
+      params: {
+        categoryId: productQuery.category?.id,
+      },
+    },
+    [productQuery]
+  );
 export default useProducts;

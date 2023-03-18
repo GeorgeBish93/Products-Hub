@@ -34,11 +34,4 @@ export default [
     creationAt: "2023-03-18T02:00:21.000Z",
     updatedAt: "2023-03-18T02:00:21.000Z",
   },
-  {
-    id: 7,
-    name: "New Category",
-    image: "https://placeimg.com/640/480/any",
-    creationAt: "2023-03-18T06:52:27.000Z",
-    updatedAt: "2023-03-18T06:52:27.000Z",
-  },
 ];

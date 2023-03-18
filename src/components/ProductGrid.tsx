@@ -3,7 +3,6 @@ import { SimpleGrid, Text } from "@chakra-ui/react";
 import ProductCard from "./ProductCard";
 import CardSkeleton from "./CardSkeleton";
 import CardContainer from "./CardContainer";
-import { Category } from "../hooks/useCategory";
 import { ProductQuery } from "../App";
 
 interface Props {

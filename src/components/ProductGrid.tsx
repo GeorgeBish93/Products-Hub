@@ -3,9 +3,14 @@ import { SimpleGrid, Text } from "@chakra-ui/react";
 import ProductCard from "./ProductCard";
 import CardSkeleton from "./CardSkeleton";
 import CardContainer from "./CardContainer";
+import { Category } from "../hooks/useCategory";
 
-const ProductGrid = () => {
-  const { data, error, isLoading } = useProducts();
+interface Props {
+  selectedCategory: Category | null;
+}
+
+const ProductGrid = ({ selectedCategory }: Props) => {
+  const { data, error, isLoading } = useProducts(selectedCategory);
   const skeletons = [1, 2, 3, 4, 5, 6];
 
   return (

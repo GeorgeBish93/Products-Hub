@@ -1,9 +1,15 @@
 import { Box, Flex, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
+import { useState } from "react";
 import CategoryList from "./components/CategoryList";
 import NavBar from "./components/NavBar";
 import ProductGrid from "./components/ProductGrid";
+import { Category } from "./hooks/useCategory";
 
 function App() {
+  const [selectedCategory, setSelectedCategory] = useState<Category | null>(
+    null
+  );
+
   return (
     <Grid
       templateAreas={{
@@ -20,11 +26,14 @@ function App() {
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
-          <CategoryList />
+          <CategoryList
+            selectedCategory={selectedCategory}
+            onSelectCategory={(category) => setSelectedCategory(category)}
+          />
         </GridItem>
       </Show>
       <GridItem area="main">
-        <ProductGrid />
+        <ProductGrid selectedCategory={selectedCategory} />
       </GridItem>
     </Grid>
   );

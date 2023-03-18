@@ -8,9 +8,14 @@ import {
   Spinner,
   Text,
 } from "@chakra-ui/react";
-import useCategory from "../hooks/useCategory";
+import useCategory, { Category } from "../hooks/useCategory";
 
-const CategoryList = () => {
+interface Props {
+  onSelectCategory: (category: Category) => void;
+  selectedCategory: Category | null;
+}
+
+const CategoryList = ({ selectedCategory, onSelectCategory }: Props) => {
   const { data, isLoading } = useCategory();
 
   if (isLoading) return <Spinner />;
@@ -21,7 +26,16 @@ const CategoryList = () => {
         <ListItem key={category.id} paddingY="5px">
           <HStack>
             <Image boxSize="20px" borderRadius={8} src={category.image}></Image>
-            <Text fontSize="lg">{category.name}</Text>
+            <Button
+              fontWeight={
+                category.id === selectedCategory?.id ? "bold" : "normal"
+              }
+              onClick={() => onSelectCategory(category)}
+              fontSize="lg"
+              variant="link"
+            >
+              {category.name}
+            </Button>
           </HStack>
         </ListItem>
       ))}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Category } from "./useCategory";
 import useData from "./useData";
 
 export interface Product {
@@ -6,7 +7,13 @@ export interface Product {
   title: string;
   images: string[];
   price: number;
+  category: {
+    id: number;
+    name: string;
+  };
 }
 
-const useProducts = () => useData<Product>("/products");
+//here insert the endount code
+const useProducts = (selectedCategory: Category | null) =>
+  useData<Product>("/products");
 export default useProducts;

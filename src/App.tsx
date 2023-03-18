@@ -30,7 +30,11 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <NavBar />
+        <NavBar
+          onSearch={(searchText) =>
+            setProductQuery({ ...productQuery, searchText })
+          }
+        />
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
@@ -48,7 +52,12 @@ function App() {
           <Flex marginBottom={5}>
             <Box marginRight={5}>
               {" "}
-              <SortSelector sortOrder={productQuery.sortOrder} />
+              <SortSelector
+                sortOrder={productQuery.sortOrder}
+                onSelectSortOrder={(sortOrder) =>
+                  setProductQuery({ ...productQuery, sortOrder })
+                }
+              />
             </Box>
           </Flex>
         </Box>

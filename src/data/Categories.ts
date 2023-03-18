@@ -15,7 +15,7 @@ export default [
   },
   {
     id: 3,
-    name: "Change title",
+    name: "Furniture",
     image: "https://api.lorem.space/image/furniture?w=640&h=480&r=8876",
     creationAt: "2023-03-18T02:00:21.000Z",
     updatedAt: "2023-03-18T06:53:44.000Z",

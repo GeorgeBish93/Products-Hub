@@ -19,6 +19,7 @@ const useProducts = (productQuery: ProductQuery) =>
     {
       params: {
         categoryId: productQuery.category?.id,
+        title: productQuery.sortOrder,
       },
     },
     [productQuery]

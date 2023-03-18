@@ -11,7 +11,10 @@ import {
 import useCategory from "../hooks/useCategory";
 
 const CategoryList = () => {
-  const { data } = useCategory();
+  const { data, isLoading } = useCategory();
+
+  if (isLoading) return <Spinner />;
+
   return (
     <List>
       {data.map((category) => (

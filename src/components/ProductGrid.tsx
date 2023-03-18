@@ -13,18 +13,18 @@ const ProductGrid = () => {
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
         padding="10px"
-        spacing={6}
+        spacing={3}
       >
         {isLoading &&
           skeletons.map((skeleton) => (
-            <CardContainer>
-              <CardSkeleton key={skeleton} />
+            <CardContainer key={skeleton}>
+              <CardSkeleton />
             </CardContainer>
           ))}
 
         {data.map((product) => (
-          <CardContainer>
-            <ProductCard key={product.id} product={product} />
+          <CardContainer key={product.id}>
+            <ProductCard product={product} />
           </CardContainer>
         ))}
       </SimpleGrid>

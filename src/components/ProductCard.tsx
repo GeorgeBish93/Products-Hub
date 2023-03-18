@@ -11,7 +11,7 @@ interface Props {
 const ProductCard = ({ product }: Props) => {
   return (
     <Card>
-      <Image src={getCroppedImageUrl(product.images[0])} />
+      <Image src={getCroppedImageUrl(product.images[1])} />
       <CardBody>
         <Heading fontSize="2xl">{product.title}</Heading>
         <HStack justifyContent="space-between" marginBottom={3}>

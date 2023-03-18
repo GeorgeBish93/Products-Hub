@@ -33,9 +33,12 @@ const CategoryList = ({ selectedCategory, onSelectCategory }: Props) => {
               <Image
                 boxSize="30px"
                 borderRadius={8}
+                objectFit="cover"
                 src={getCroppedImageUrl(category.image)}
               ></Image>
               <Button
+                whiteSpace="normal"
+                textAlign="left"
                 fontWeight={
                   category.id === selectedCategory?.id ? "bold" : "normal"
                 }

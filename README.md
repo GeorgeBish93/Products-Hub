@@ -4,7 +4,6 @@ ProductsHub is a Respsonsive React static website , that was build using Chakra 
 The Data viewed in the website was imported from Platzi Fake Store API using Axios-Promise based HTTP client.<br>
 With ProductsHub, you can view filter products by category, brand, and more simultaneously.
 
-
 # Website Link
 ProductsHub - https://products-hub.vercel.app/
 # 

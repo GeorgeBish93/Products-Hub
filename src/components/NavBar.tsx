@@ -1,5 +1,6 @@
 import { HStack, Image } from "@chakra-ui/react";
-import logo from "../assets/plogo.png";
+import logo from "../assets/bLogo.png";
+import CategoryHeading from "./CategoryHeading";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
